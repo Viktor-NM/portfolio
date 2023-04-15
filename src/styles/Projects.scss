@@ -1,0 +1,154 @@
+@import './main';
+
+#projects {
+    h2 {
+        color: $white;
+        background-color: $black;
+        padding: 1em;
+        margin-bottom: 1em;
+        font-weight: $bold;
+        cursor: default;
+
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none;
+
+        &:hover {
+            color: $contrast
+        }
+    }
+}
+
+.projectData {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.projectList {
+    overflow: auto;
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $gray;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #505050;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+        padding: 8px;
+
+        
+
+        li {
+            flex: 1 0 auto;
+            padding: 12px;
+            border: 1px solid $black;
+            background-color: #fff;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none;
+
+            &:hover {
+                background-color: $contrast;
+             
+            }
+        }
+    }
+}
+
+.active {
+    background-color: $contrast !important;
+}
+
+.currentProject {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    article {
+        width: 100%;
+        img {
+            filter: drop-shadow(8px 8px $gray);
+            width: 100%;
+            height: 450px;
+            object-fit: contain;
+
+            -webkit-user-drag: none;
+            
+        }
+    }
+
+    footer {
+        nav {
+            display: flex;
+            gap: 4px;
+            // outline: $outline;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .projectData {
+        flex-direction: row;
+    }
+
+    .projectList {
+        ul {
+            max-height: 450px;
+            overflow-y: auto;
+            flex-direction: column;
+
+
+        
+            li {
+                flex: 1 1 0 !important;
+                cursor: pointer;
+                background-color: #fff;
+            }
+        }
+    }
+
+    .currentProject {
+        flex: 1 !important;
+        gap: 1em;
+    
+        footer {
+            nav {
+                display: flex;
+                gap: 4px;
+                // justify-content: center;
+            }
+        }
+    }
+
+}
+
+.oimg {
+    background-color: $gray;
+    width: 32px;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    
+
+    &:hover {
+        border: 1px solid $gray;
+        background-color: $white;
+        color: $gray;
+    }
+}

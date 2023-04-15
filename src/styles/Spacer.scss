@@ -1,0 +1,56 @@
+@import './main';
+
+.spacer {
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.col, .itm {
+    width: 50px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 25px;
+}
+
+.col {
+    left: 20px;
+
+    svg {
+        border-radius: 10px;
+        transition-property: box-shadow, background-color, fill;
+        transition: 250ms cubic-bezier(0.075, 0.82, 0.165, 1); 
+    }
+}
+
+.itm {
+    cursor: grab;
+    right: 20px;
+
+    svg {
+        transform: scaleX(-1);
+        
+    }
+
+}
+
+.itm:active {
+    cursor: grabbing;
+}
+
+
+.activeCol {
+    svg {
+        border: 1px solid $black;
+        box-shadow: shadowed(-6px, 6px);
+        background-color: #fff;
+        fill: #fff;
+
+        &:active {
+            box-shadow: none;
+            fill: $contrast;
+            background-color: $contrast;
+            transform: translate(-6px, 6px);
+        }
+    }
+}
