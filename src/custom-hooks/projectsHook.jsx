@@ -21,17 +21,17 @@ export const projects = [
 	{
 		id: 1,
 		name: 'DOMI App',
-		pics: demographyPics,
+		pics: domiPics,
 	},
 	{
 		id: 2,
 		name: 'Intelecza App',
-		pics: domiPics,
+		pics: inteleczaPics,
 	},
 	{
 		id: 3,
 		name: 'Demography',
-		pics: inteleczaPics,
+		pics: demographyPics,
 	},
 	{
 		id: 4,
